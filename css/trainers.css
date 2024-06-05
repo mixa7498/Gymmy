@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0 30px #0C1417 inset !important;
+    -webkit-text-fill-color: white !important;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: white;
+    padding: 5px 0 5px 0;
+    align-items: center;
+}
+.navlink{
+    display: flex;
+    gap: 20px;
+}
+.navlink a{
+    text-decoration: none;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.navlink a:hover{
+    color: #F7931E;
+    transition: .3s;
+}
+.logo{
+    width: 188px;
+    height: 70px;
+}
+.log{
+    width: 188px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 7px;
+}
+.log:hover{
+    transform: scale(1.03);
+    transition: .2s;
+    cursor: pointer;
+}
+header{
+    background-image: url(../images/header.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 1000px 1000px rgba(0,0,0, 0.6);
+    position: relative;
+}
+main{
+    background-color: #0C1417;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 570px);
+    justify-content: space-around;
+    color: white;
+    font-size: 16px;
+    font-family: "Montserrat";
+    padding-bottom: 40px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+.flex>div img{
+    width: 350px;
+    border-radius: 15px;
+}
+.flex>div p{
+    padding-left: 10px;
+}
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 14px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.logop{
+    padding-bottom: 15px;
+}
+.footera{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footera a{
+    text-decoration: none;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 14px;
+}
+.footerimg{
+    display: flex;
+    gap: 15px;
+}
+.footerimg img{
+    width: 22px;
+}
+.form1{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 400px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    border-radius: 20px; 
+    max-height: 480px;
+}
+.form2{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 400px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px; 
+    max-height: 530px;
+}
+.formin{
+    width: 90%;
+    height: 40px;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: white solid 1px;
+    outline: none;
+    font-size: 14px;
+    color: white;
+    padding-top: 10px;
+}
+.formb{
+    background-color: transparent;
+    width: 280px;
+    height: 60px;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transform: skew(-30deg);
+    border: 1px solid white;
+    transition: box-shadow 0.3s;
+    margin-top: 40px;
+}
+.formb:hover {
+    box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.64);
+    transition: .3s;
+    cursor: pointer;
+}
+.formb:active{
+    transform: scale(0.98) skew(-30deg);
+}
+.formb p{
+    transform: skew(30deg);
+}
+.close{
+    color: rgba(255, 255, 255, 0.726);
+    position: absolute;
+    scale: 1.5;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+ion-icon:active{
+    transform: scale(0.9);
+}
+ion-icon:hover{
+    color: white;
+}
+.md{
+    display: flex;
+    justify-content: center;
+    animation: aniBG 0.5s;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.499);
+}

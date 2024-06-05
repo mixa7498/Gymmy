@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./script/script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="./images/dumbbell.png" />
+    <title>Gymmy - Главная</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="./index.html"><img class="logo" src="./images/logo.png" alt="Логотип" ></a>
+            </div>
+        <div class="navlink">
+            <a onclick="scrollToHandler()">О нас</a>
+            <a href="./abonements.html">Абонементы</a>
+            <a href="./trainers.html">Тренеры</a>
+            <a onclick="scrollToFooter()">Контакты</a>
+        </div>
+        <div class="log">
+            <p id="profile" style="display: none;"></p>
+            <p id="logp" onclick="openlogin()">Войти</p>
+            <ion-icon name="person"></ion-icon>
+        </div>
+        </nav>
+        <div class="headerb">
+            <p class="headerp">Фитнес клуб GYMMY</p>
+            <button id="butabonement" onclick="window.location = './abonements.html'" class="get" style="display: none;"><p class="getp">Забронировать абонемент</p></button>
+            <button id="regbut" onclick="openreg()" class="get"><p class="getp">Зарегистрироваться</p></button>
+        </div>
+        <div class="links">
+            <button onclick="scrollToHandler()" class="linksb">
+                <img src="./images/arrow.png" alt="Стрелка вниз">
+            </button>
+        </div>
+    </header>
+    <main id="main">
+        <div class="main">
+            <div class="content">
+                <div class="imgmain">
+                    <div>
+                        <img src="./images/content1.png" alt="">
+                    </div>
+                    <div class="content2">
+                        <img src="./images/content2.png" alt="">
+                    </div>
+                </div>
+                <div class="maintext">
+                    <div class="hmain">
+                        <p>Новый образ жизни</p>
+                    </div>
+                    <div class="pmain">
+                        <p>Став частью нашей команды, вы сможете изменить привычный ритм жизни и сделать каждый свой день особенным, а формат наших тренировок позволит вам раскрыть потенциал вашего тела на 100%.</p>
+                    </div>
+                    <div>
+                        <button onclick="openform()" class="mainb"><p class="getp">Получить консультацию</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="imp">
+            <div class="flex">
+                <img src="./images/bike.png" alt="">
+                <p>Полностью <br>укомплектованный зал</p>
+            </div>
+            <div class="flex">
+                <img src="./images/dumbbell.png" alt="">
+                <p>Профессиональное<br> оборудование</p>
+            </div>
+            <div class="flex">
+                <img src="./images/location (7).png" alt="">
+                <p>Удобное расположение<br> в центре города</p>
+            </div>
+            <div class="flex">
+                <img src="./images/wallet.png" alt="">
+                <p>Доступная<br> стоимость занятий</p>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div>
+            <img class="logo" src="./images/logo.png" alt="">
+            <p class="logop">© Все права защищены</p>
+            <p>Орехово-Зуево, 2024</p>
+        </div>
+        <div class="footera">
+            <a href="">О нас</a>
+            <a href="">Контакты</a>
+        </div>
+        <div class="footera">
+            <a href="./abonements.html">Абонементы</a>
+            <a href="trainers.html">Тренеры</a>
+        </div>
+        <div class="footera">
+            <div>
+                <a href="">Наши соц.сети</a>
+            </div>
+            <div class="footerimg">
+                <a href=""><img src="./images/instagram.png" alt=""></a>
+                <a href=""><img src="./images/vk.png" alt=""></a>
+            </div>
+        </div>
+        <div class="footera">
+            <p>г. Орехово-Зуево, ул. Ленина 84</p>
+            <p>Ежедневно с 8:00 до 23:00</p>
+            <a href="">+7 911 334 23 67</a>
+            <a href="">Политика конфиденциальности</a>
+        </div>
+    </footer>
+    <div id="md" style="display: none; width: 100%; height: 100%; position: relative;">
+        <div class="md">
+            <div id="contact" class="form1">
+                <div onclick="closeform()" class="close"><ion-icon name="close"></ion-icon></div>
+                <div style="padding-top: 35px; font-family: Montserrat-Bold; font-size: 24px;"><p>Остались вопросы?</p></div>
+                <div><p>Оставьте Ваш номер телефона<br>и мы обязательно с Вами свяжемся</p></div>
+                <form action="">
+                    <div><input id="formin1" placeholder="Введите имя" class="formin" type="text"></div>
+                    <div><input id="formin2" placeholder="Введите телефон" class="formin" type="tel"></div>
+                    <div><button class="formb" type="submit"><p>Получить консультацию</p></button></div>
+                </form>
+                <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;"><p>Нажимая на кнопку вы соглашаетесь<br>с политикой конфиденциальности</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="reg" style="display: none; width: 100%; height: 100%; position: relative;">
+        <div class="md">
+        <div id="contact" class="form2">
+            <div onclick="closereg()" class="close"><ion-icon name="close"></ion-icon></div>
+            <div style="padding-top: 35px; font-family: Montserrat-Bold; font-size: 24px;"><p>Регистрация</p></div>
+            <div><p>Введите данные нового аккаунта</p></div>
+            <form id="submit-to-google-sheet" action="#">
+                <div>
+                    <input 
+                    name="name" 
+                    id="regn" 
+                    placeholder="Введите Имя" 
+                    class="formin" type="text" 
+                    required 
+                    minlength="2"
+                    />
+                </div>
+                <div>
+                    <input 
+                    name="email" 
+                    id="regin" 
+                    placeholder="Введите email" 
+                    class="formin" 
+                    type="email" 
+                    required
+                    />
+                </div>
+                <div>
+                    <input 
+                    name="password" 
+                    id="regp" 
+                    placeholder="Введите пароль" 
+                    class="formin" 
+                    type="password" 
+                    required 
+                    minlength="7"
+                    pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                    />
+                </div>
+                <div>
+                    <input 
+                    name="repeatpassword" 
+                    id="regpp" 
+                    placeholder="Повторите пароль" 
+                    class="formin" 
+                    type="password" 
+                    required
+                    minlength="7"
+                    pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                    />
+                </div>
+                <div>
+                    <button onclick="return registration()" class="formb" type="submit"><p>Зарегистрироваться</p></button>
+                </div>
+            </form>
+            <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;">
+                <p style="padding-bottom: 10px;">Уже есть аккаунт?</p>
+                <p onclick="toggleForms()" style="font-size: 14px; color: rgba(255, 255, 255, 0.689); text-decoration: underline; cursor: pointer;">Войти</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="login" style="display: none; width: 100%; height: 100%; position: relative;">
+        <div class="md">
+        <div id="contact" class="form1">
+            <div onclick="closelogin()" class="close"><ion-icon name="close"></ion-icon></div>
+            <div style="padding-top: 35px; font-family: Montserrat-Bold; font-size: 24px;"><p>Вход</p></div>
+            <div><p>Введите данные своего аккаунта</p></div>
+            <form action="#">
+                <div>
+                    <input
+                    name="email" id="loginin" placeholder="Введите email" class="formin" type="email" required
+                    />
+                </div>
+                <div>
+                    <input 
+                    name="password" 
+                    id="logininp" 
+                    placeholder="Введите пароль" 
+                    class="formin" 
+                    type="password" 
+                    required 
+                    pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                    />
+                </div>
+                <div>
+                    <button onclick="return logining()" class="formb" type="submit"><p>Войти</p></button></div>
+            </form>
+            <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;">
+                <p style="padding-bottom: 10px;">Ещё нет аккаунта?</p>
+                <p onclick="toggleForms();" style="font-size: 14px; color: rgba(255, 255, 255, 0.689); text-decoration: underline; cursor: pointer;">Зарегистрироваться</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="data" style="display: none; width: 100%; height: 100%; position: relative;">
+        <div class="md">
+            <div class="popUp">
+                <div onclick="closedata()" class="close"><ion-icon name="close"></ion-icon></div>
+                <div>
+                    <div style="text-align: center;">
+                        <div style="padding-top: 120px;display: flex; flex-direction: column; gap: 15px; padding-bottom: 15px;">
+                            <p><img style="width: 100px;" src="/images/CheckMarker.png"></p>
+                            <p style="font-size: 20px; font-family: Montserrat-Bold; ">
+                                Вы успешно зарегистрировались
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

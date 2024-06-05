@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/abonements.css">
+    <script defer src="./script/script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="./images/dumbbell.png" />
+    <title>Gymmy - Абонементы</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <div>
+            <a href="./index.html"><img class="logo" src="images/logo.png" alt="Логотип" ></a>
+        </div>
+    <div class="navlink">
+        <a href="./index.html">Главная</a>
+        <a href="./trainers.html">Тренеры</a>
+        <a onclick="scrollToFooter()">Контакты</a>
+    </div>
+    <div class="log">
+        <p id="profile" style="display: none;"></p>
+        <p id="logp" onclick="openlogin()">Войти</p>
+        <ion-icon name="person"></ion-icon>
+    </div>
+    </nav>
+    </header>
+    <main>
+        <div class="flex">
+            <div class="title">
+                <p style="font-size: 30px; font-family: Montserrat-Bold;">Абонементы</p>
+            </div>
+            <div class="grid">
+                <div class="fcol"><p>Кол-во занятий</p></div>
+                <div class="frow"><p>1 тренировка</p></div>
+                <div class="frow"><p>4 тренировки</p></div>
+                <div class="frow"><p>8 тренировок</p></div>
+                <div class="frow"><p>12 тренировок</p></div>
+                <div class="fcol"><p>Персональный тренинг с инструктором</p></div>
+                <div class="baby"><p>700 руб.</p></div>
+                <div class="baby"><p>2600 руб.<br>(действителен в течении 3 недель)</p></div>
+                <div class="baby"><p>5200 руб.<br>(действителен в течении 6 недель)</p></div>
+                <div class="baby"><p>7200 руб.<br>(действителен в течении 10 недель)</p></div>
+                <div class="fcol"><p>Самостоятельные тренировки в тренажерном зале</p></div>
+                <div class="baby"><p>250 руб.</p></div>
+                <div class="baby"><p>—</p></div>
+                <div class="baby"><p>1500 руб.<br>(действителен в течении 30 дней)</p></div>
+                <div class="baby"><p>2000 руб.<br>(действителен в течении 30 дней)</p></div>
+                <div class="fcol">Зал групповых программ</div>
+                <div class="baby"><p>300 руб.</p></div>
+                <div class="baby"><p>—</p></div>
+                <div class="baby"><p>2000 руб.<br>(действителен в течении 30 дней)</p></div>
+                <div class="baby"><p>2750 руб.<br>(действителен в течении 45 дней)</p></div>
+            </div>
+            <div class="title">
+                <p style="font-size: 30px; font-family: Montserrat-Bold;">Абонементы по времени</p>
+            </div>
+            <div class="tinygrid">
+                <div class="fcol">Тип карты</div>
+                <div class="frow">12 месяцев</div>
+                <div class="frow">6 месяцев</div>
+                <div class="frow">3 месяца</div>
+                <div class="frow">1 месяц</div>
+                <div class="fcol">Индивидуальная,<br>полная без ограничения<br>в посещении / 8:00 – 23:00</div>
+                <div class="baby">18000 руб.<br>(+200 мин. солярия)</div>
+                <div class="baby">12000 руб.</div>
+                <div class="baby">7000 руб.</div>
+                <div class="baby">2500 руб.</div>
+                <div class="fcol">Индивидуальная,<br>дневная / 8:00 – 17:00</div>
+                <div class="baby">—</div>
+                <div class="baby">9500 руб.</div>
+                <div class="baby">5500 руб.</div>
+                <div class="baby">2000 руб.</div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div>
+                <img class="logo" src="images/logo.png" alt="">
+                <p class="logop">© Все права защищены</p>
+                <p>Орехово-Зуево, 2024</p>
+            </div>
+            <div class="footera">
+                <a href="index.html">Главная</a>
+                <a href="">Контакты</a>
+            </div>
+            <div class="footera">
+                <a href="abonements.html">Абонементы</a>
+                <a href="trainers.html">Тренеры</a>
+            </div>
+            <div class="footera">
+                <div>
+                    <a href="">Наши соц.сети</a>
+                </div>
+                <div class="footerimg">
+                    <a href=""><img src="images/instagram.png" alt=""></a>
+                    <a href=""><img src="images/vk.png" alt=""></a>
+                </div>
+            </div>
+            <div class="footera">
+                <p>г. Орехово-Зуево, ул. Ленина 84</p>
+                <p>Ежедневно с 8:00 до 23:00</p>
+                <a href="">+7 911 334 23 67</a>
+                <a href="">Политика конфиденциальности</a>
+            </div>
+        </footer>
+        <div id="reg" style="display: none; width: 100%; height: 100%; position: relative;">
+            <div class="md">
+            <div id="contact" class="form2">
+                <div onclick="closereg()" class="close"><ion-icon name="close"></ion-icon></div>
+                <div style="padding-top: 35px; font-family: Montserrat-Bold; font-size: 24px;"><p>Регистрация</p></div>
+                <div><p>Введите данные нового аккаунта</p></div>
+                <form id="submit-to-google-sheet" action="#">
+                    <div>
+                        <input 
+                        name="name" 
+                        id="regn" 
+                        placeholder="Введите Имя" 
+                        class="formin" type="text" 
+                        required 
+                        minlength="2"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="email" 
+                        id="regin" 
+                        placeholder="Введите email" 
+                        class="formin" 
+                        type="email" 
+                        required
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="password" 
+                        id="regp" 
+                        placeholder="Введите пароль" 
+                        class="formin" 
+                        type="password" 
+                        required 
+                        minlength="7"
+                        pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="repeatpassword" 
+                        id="regpp" 
+                        placeholder="Повторите пароль" 
+                        class="formin" 
+                        type="password" 
+                        required
+                        minlength="7"
+                        pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                        />
+                    </div>
+                    <div>
+                        <button onclick="return registration()" class="formb" type="submit"><p>Зарегистрироваться</p></button>
+                    </div>
+                </form>
+                <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;">
+                    <p style="padding-bottom: 10px;">Уже есть аккаунт?</p>
+                    <p onclick="toggleForms()" style="font-size: 14px; color: rgba(255, 255, 255, 0.689); text-decoration: underline; cursor: pointer;">Войти</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="login" style="display: none; width: 100%; height: 100%; position: relative;">
+            <div class="md">
+            <div id="contact" class="form1">
+                <div onclick="closelogin()" class="close"><ion-icon name="close"></ion-icon></div>
+                <div style="padding-top: 35px; font-family: Montserrat-Bold; font-size: 24px;"><p>Вход</p></div>
+                <div><p>Введите данные своего аккаунта</p></div>
+                <form action="#">
+                    <div>
+                        <input
+                        name="email" id="loginin" placeholder="Введите email" class="formin" type="email" required
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="password" 
+                        id="logininp" 
+                        placeholder="Введите пароль" 
+                        class="formin" 
+                        type="password" 
+                        required 
+                        pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                        />
+                    </div>
+                    <div>
+                        <button onclick="return logining()" class="formb" type="submit"><p>Войти</p></button></div>
+                </form>
+                <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;">
+                    <p style="padding-bottom: 10px;">Ещё нет аккаунта?</p>
+                    <p onclick="toggleForms();" style="font-size: 14px; color: rgba(255, 255, 255, 0.689); text-decoration: underline; cursor: pointer;">Зарегистрироваться</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="data" style="display: none; width: 100%; height: 100%; position: relative;">
+            <div class="md">
+                <div class="popUp">
+                    <div onclick="closedata()" class="close"><ion-icon name="close"></ion-icon></div>
+                    <div>
+                        <div style="text-align: center;">
+                            <div style="padding-top: 120px;display: flex; flex-direction: column; gap: 15px; padding-bottom: 15px;">
+                                <p><img style="width: 100px;" src="/images/CheckMarker.png"></p>
+                                <p style="font-size: 20px; font-family: Montserrat-Bold; ">
+                                    Вы успешно зарегистрировались
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+</body>
+</html>

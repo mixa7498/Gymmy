@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@keyframes aniBG { 
+    0% { 
+        opacity: 0; 
+        z-index: 100;
+    } 
+    100% { 
+        opacity: 1; 
+        z-index: 100; 
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0 30px #0C1417 inset !important;
+    -webkit-text-fill-color: white !important;
+}
+.logo{
+    width: 188px;
+    height: 70px;
+}
+header{
+    background-image: url(../images/header.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 1000px 1000px rgba(0,0,0, 0.6);
+    position: relative;
+}
+.headerb{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 220px;
+}
+.headerp{
+    font-family: "Montserrat-Bold";
+    color: white;
+    font-size: 68px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.navlink a{
+    text-decoration: none;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transition: 0.3s;
+}
+.navlink a:hover{
+    color: #F7931E;
+    transition: .3s;
+    cursor: pointer;
+}
+.log{
+    width: 188px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 7px;
+}
+.log:hover{
+    transform: scale(1.03);
+    transition: .2s;
+    cursor: pointer;
+}
+.get{
+    background-color: #F7931E;
+    width: 300px;
+    height: 60px;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transform: skew(-30deg);
+    transition: box-shadow 0.3s;
+    border: none;
+}
+.getp{
+    transform: skew(30deg);
+    font-size: 18px;
+}
+.get:hover {
+    box-shadow:10px 10px 0 rgba(255, 255, 255, 0.781);
+    transition: .3s;
+    cursor: pointer;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: white;
+    padding: 5px 0 5px 0;
+    align-items: center;
+    margin-bottom: 180px;
+}
+.navlink{
+    display: flex;
+    gap: 20px;
+}
+.links{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.linksb:hover{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+.linksb{
+    background: transparent;
+    border: none !important;
+    cursor: pointer;
+}
+main{
+    background-color: #0C1417;
+}
+.main{
+    padding-top: 30px;
+    display: flex;
+    margin-bottom: 30px;
+}
+.imgmain{
+    display: flex;
+}
+.content{
+    display: flex;
+    padding: 0 100px 0 100px;
+    gap: 40px;
+}
+.hmain{
+    font-family: "Montserrat-Bold";
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+}
+.pmain{
+    font-family: "Montserrat";
+    color: white;
+    font-size: 26px;
+    padding-top: 50px;
+}
+.mainb{
+    background-color: transparent;
+    width: 300px;
+    height: 60px;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transform: skew(-30deg);
+    border: 1px solid white;
+    transition: box-shadow 0.3s;
+    margin-top: 40px;
+}
+.mainb:hover {
+    box-shadow:10px 10px 0 #F7931E;
+    transition: .3s;
+    cursor: pointer;
+}
+.content2{
+    margin-left: -70px;
+    padding-top: 40px;
+}
+.maintext{
+    padding-top: 100px;
+}
+.imp{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Montserrat";
+    color: white;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 14px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.logop{
+    padding-bottom: 15px;
+}
+.footera{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footera a{
+    text-decoration: none;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 14px;
+}
+.footerimg{
+    display: flex;
+    gap: 15px;
+}
+.footerimg img{
+    width: 22px;
+}
+.form1{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 400px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    border-radius: 5px; 
+    max-height: 480px;
+}
+.form2{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 400px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 5px; 
+    max-height: 530px;
+}
+.formin{
+    width: 90%;
+    height: 40px;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: white solid 1px;
+    outline: none;
+    font-size: 14px;
+    color: white;
+    padding-top: 10px;
+}
+.formb{
+    background-color: transparent;
+    width: 280px;
+    height: 60px;
+    font-family: "Montserrat-Bold";
+    color: white;
+    transform: skew(-30deg);
+    border: 1px solid white;
+    transition: box-shadow 0.3s;
+    margin-top: 40px;
+}
+.formb:hover {
+    box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.64);
+    transition: .3s;
+    cursor: pointer;
+}
+.formb:active{
+    transform: scale(0.98) skew(-30deg);
+}
+.formb p{
+    transform: skew(30deg);
+}
+.close{
+    color: rgba(255, 255, 255, 0.726);
+    position: absolute;
+    scale: 1.5;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+ion-icon:active{
+    transform: scale(0.9);
+}
+ion-icon:hover{
+    color: white;
+}
+.md{
+    display: flex;
+    justify-content: center;
+    animation: aniBG 0.5s;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.499);
+}
+.popUp{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 300px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: start;
+    margin-top: 80px;
+    border-radius: 5px; 
+    max-height: 370px;
+}
