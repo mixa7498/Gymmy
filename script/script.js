@@ -267,6 +267,7 @@ function loginform() {
 function logining() {
     let email = document.getElementById("loginin").value
     let password = document.getElementById("logininp").value
+    let counter = 0
 
     for (let i = 0; i < usersdata.length; i++) {
         if (usersdata[i].email == email && usersdata[i].password == password) {
@@ -274,7 +275,14 @@ function logining() {
             localStorage.setItem("emailUser", usersdata[i].email)
             opendata()
             closelogin()
-        }
+        }else{
+            counter++
+        }    
+    }
+    if (counter == usersdata.length){
+        document.getElementById("regin").value = email
+        toggleForms()
+        counter = 0
     }
 }
 
