@@ -6,10 +6,6 @@ function checkProfile() {
         document.getElementById("logp").style.display = "none"
         document.getElementById("profile").style.display = "block"
         document.getElementById("profile").textContent = localStorage.getItem("nameUser")
-        if (window.location.href == "http://127.0.0.1:5500/index.html") {
-            document.getElementById("regbut").style.display = "none"
-            document.getElementById("butabonement").style.display = "block"
-        }
     }
 }
 
