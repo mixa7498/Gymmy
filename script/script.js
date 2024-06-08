@@ -1,12 +1,15 @@
 let usersdata = []
+let exitCount = 0
 
 function checkProfile() {
     if (localStorage.getItem("nameUser") != null) {
         document.getElementById("logp").style.display = "none"
         document.getElementById("profile").style.display = "block"
         document.getElementById("profile").textContent = localStorage.getItem("nameUser")
-        document.getElementById("regbut").style.display = "none"
-        document.getElementById("butabonement").style.display = "block"
+        if (window.location.href == "http://127.0.0.1:5500/index.html") {
+            document.getElementById("regbut").style.display = "none"
+            document.getElementById("butabonement").style.display = "block"
+        }
     }
 }
 
@@ -28,10 +31,53 @@ function openform() {
     document.getElementById("md").style.display = "block"
 }
 
+function openres() {
+    document.getElementById("reserve").style.display = "block"
+}
+
+function closeres() {
+    document.getElementById("reserve").style.display = "none"
+}
+
 function openreg() {
     document.getElementById("reg").style.display = "block"
 
     loginform()
+}
+
+function openexit() {
+    if (exitCount == 0) {
+        document.getElementById("exit").style.display = "block"
+        exitCount++
+    }else{
+        document.getElementById("exit").style.display = "none"
+        exitCount = 0
+    }
+}
+
+function exit() {
+        localStorage.clear()
+        location.reload()
+}
+
+function validateName(name) {
+    let regular = /^[а-яА-Я\-]+$/;
+    return regular.test(name);
+}
+
+function validateEmail(email) {
+    let regular = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regular.test(email);
+}
+
+function validatePassword(pass) {
+    let regular = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/;
+    return regular.test(pass);
+}
+
+function validateTel(tel) {
+    let regular = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    return regular.test(tel);
 }
 
 function registration() { 
@@ -49,26 +95,38 @@ function registration() {
         }
     }
     if (count == usersdata.length) {
-        if (name != "") {
-            document.getElementById("regn").style.borderColor = "white"
-            if (email.length > 9) {
-                document.getElementById("regin").style.borderColor = "white"
-                if (pass == repPass && pass != "") {
-                opendata()
-                localStorage.setItem("nameUser", name)
-                localStorage.setItem("emailUser", email)
-                post()
-                closereg()
+        if (name != "" && email != "" && pass != "" && repPass != "") {
+            if (validateName(name)) {
+                document.getElementById("regn").style.borderColor = "white"
+                if (validateEmail(email)) {
+                    document.getElementById("regin").style.borderColor = "white"
+                    if (validatePassword(pass)) {
+                        document.getElementById("regp").style.borderColor = "white"
+                        if (pass == repPass && pass != "") {
+                        opendata()
+                        localStorage.setItem("nameUser", name)
+                        localStorage.setItem("emailUser", email)
+                        post()
+                        closereg()
+                        }else{
+                            document.getElementById("regp").style.borderColor = "red"
+                            document.getElementById("regpp").style.borderColor = "red"
+                        }
+                    }else{
+                        document.getElementById("regp").style.borderColor = "red"
+                    }
                 }else{
-                    document.getElementById("regp").style.borderColor = "red"
-                    document.getElementById("regpp").style.borderColor = "red"
+                    document.getElementById("regin").style.borderColor = "red"
                 }
             }else{
-                document.getElementById("regin").style.borderColor = "red"
+                document.getElementById("regn").style.borderColor = "red"
             }
         }else{
             document.getElementById("regn").style.borderColor = "red"
-            }
+            document.getElementById("regin").style.borderColor = "red"
+            document.getElementById("regp").style.borderColor = "red"
+            document.getElementById("regpp").style.borderColor = "red"
+        }
     }else{
         toggleForms()
         document.getElementById("loginin").value = email
@@ -82,6 +140,48 @@ function post() {
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
+}
+
+function reserve() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz507P832Di9XdFL4uZ75Bwfv_QHaMdepOANacJCEOfxcbbSK5-6guDeKw6VYcPc8fAbw/exec'
+    const form = document.forms['formres']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    })
+    opendata()
+    closeres()
+}
+
+function consult() {
+    let name = document.getElementById("cname").value;
+    let tel = document.getElementById("ctel").value;
+
+    if (validateName(name)) {
+        document.getElementById("cname").style.borderColor = "white"
+        if (validateTel(tel)) {
+            postConsult()
+            opendata()
+            closeform()
+        }else{
+            document.getElementById("ctel").style.borderColor = "red"
+        }
+    }else{
+        document.getElementById("cname").style.borderColor = "red"
+    }
+}
+
+function postConsult() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzGbjRtfo93CA__z4yanGQf-ez1gNcDvCMNYroRBnco-1DQ-hc07VNdYRYwJcfza7hkGQ/exec'
+    const form = document.forms['consult']
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
 }
 
 function openlogin() {
@@ -102,6 +202,7 @@ function opendata() {
 
 function closedata() {
     document.getElementById("data").style.display = "none"
+    location.reload()
 }
 
 function closereg() {
@@ -127,8 +228,6 @@ function toggleForms() {
         reg.style.display = 'block';
         document.getElementById('loginin').value = '';
         document.getElementById('logininp').value = '';
-
-        post()
     } else {
         login.style.display = 'block';
         reg.style.display = 'none';
@@ -177,7 +276,34 @@ function logining() {
         if (usersdata[i].email == email && usersdata[i].password == password) {
             localStorage.setItem("nameUser", usersdata[i].name)
             localStorage.setItem("emailUser", usersdata[i].email)
+            opendata()
+            closelogin()
         }
     }
 }
 
+const prices = document.querySelectorAll('.baby');
+let uname = document.getElementById('uname');
+let umail = document.getElementById('umail');
+let Name = document.getElementById('aname');
+let Duration = document.getElementById('adur');
+let cost = document.getElementById('acost');
+
+prices.forEach(e => {
+    e.addEventListener('click', () => {
+        if (localStorage.getItem("nameUser") != null) {
+            let subscription = e.getAttribute("data-name") 
+            let duration = e.getAttribute("data-duration")
+            let price = e.getAttribute("data-price")
+
+            Name.value = subscription
+            Duration.value = duration
+            cost.value = price
+            uname.value = localStorage.getItem("nameUser")
+            umail.value = localStorage.getItem("emailUser")
+            openres()
+        }else{
+            openreg()
+        }
+    });
+});

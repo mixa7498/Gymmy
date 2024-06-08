@@ -12,6 +12,9 @@
 </head>
 <body>
     <header>
+        <div id="exit" class="exit" onclick="exit()">
+            <div style="display: flex; gap: 5px; align-items: center;"><p>Выйти</p><ion-icon name="exit"></ion-icon></div>
+        </div>
         <nav>
         <div>
             <a href="index.html"><img class="logo" src="images/logo.png" alt="Логотип" ></a>
@@ -22,7 +25,7 @@
         <a onclick="scrollToFooter()">Контакты</a>
     </div>
     <div class="log">
-        <p id="profile" style="display: none;"></p>
+        <p id="profile" onclick="openexit()" style="display: none;"></p>
         <p id="logp" onclick="openlogin()">Войти</p>
         <ion-icon name="person"></ion-icon>
     </div>
@@ -126,6 +129,7 @@
                     class="formin" type="text" 
                     required 
                     minlength="2"
+                    maxlength="20"
                     />
                 </div>
                 <div>
@@ -134,7 +138,8 @@
                     id="regin" 
                     placeholder="Введите email" 
                     class="formin" 
-                    type="email" 
+                    type="email"
+                    maxlength="25" 
                     required
                     />
                 </div>
@@ -147,7 +152,7 @@
                     type="password" 
                     required 
                     minlength="7"
-                    pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
+                    maxlength="15"
                     />
                 </div>
                 <div>
@@ -159,11 +164,10 @@
                     type="password" 
                     required
                     minlength="7"
-                    pattern="^(?=.*[а-яa-z])(?=.*[0-9]).{7,}"
                     />
                 </div>
                 <div>
-                    <button onclick="return registration()" class="formb" type="submit"><p>Зарегистрироваться</p></button>
+                    <button onclick="return registration()" class="formb" type="button"><p>Зарегистрироваться</p></button>
                 </div>
             </form>
             <div style="font-size: 14px; color: rgba(255, 255, 255, 0.468); padding-bottom: 20px;">
@@ -215,12 +219,13 @@
                         <div style="padding-top: 120px;display: flex; flex-direction: column; gap: 15px; padding-bottom: 15px;">
                             <p><img style="width: 100px;" src="/images/CheckMarker.png"></p>
                             <p style="font-size: 20px; font-family: Montserrat-Bold; ">
-                                Вы успешно зарегистрировались
+                                Успешно!
                             </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

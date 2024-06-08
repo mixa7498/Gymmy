@@ -335,3 +335,24 @@ ion-icon:hover{
     border-radius: 5px; 
     max-height: 370px;
 }
+@keyframes Down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.exit{
+    cursor: pointer;
+    display: none;
+    position: absolute; 
+    top: 60px; 
+    right: 127px; 
+    color: white; 
+    align-items: center; 
+    font-family: "Montserrat";
+    animation: Down 0.5s forwards;
+}

@@ -76,7 +76,7 @@ main{
     background-color: #0C1417;
     font-size: 16px;
     font-family: "Montserrat";
-    color: rgb(201, 201, 201)
+    color: rgb(228, 228, 228)
 }
 .table{
     display: flex;
@@ -117,6 +117,9 @@ main{
 }
 .baby:hover{
     cursor: pointer;
+    font-family: "Montserrat-Bold";
+}
+.void:hover{
     font-family: "Montserrat-Bold";
 }
 .tinygrid{
@@ -186,7 +189,7 @@ footer{
     color: white;
     text-align: center;
     margin-top: 80px;
-    border-radius: 20px; 
+    border-radius: 5px; 
     max-height: 480px;
 }
 .form2{
@@ -201,8 +204,23 @@ footer{
     color: white;
     text-align: center;
     margin-top: 50px;
-    border-radius: 20px; 
+    border-radius: 5px; 
     max-height: 530px;
+}
+.form3{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 410px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 5px; 
+    max-height: 470px;
 }
 .formin{
     width: 90%;
@@ -263,4 +281,40 @@ ion-icon:hover{
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.499);
+}
+.popUp{
+    position: relative;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    background-color: #0C1417;
+    width: 300px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+    text-align: start;
+    margin-top: 80px;
+    border-radius: 5px; 
+    max-height: 370px;
+}
+@keyframes Down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.exit{
+    cursor: pointer;
+    display: none;
+    position: absolute; 
+    top: 60px; 
+    right: 145px; 
+    color: white; 
+    align-items: center; 
+    font-family: "Montserrat";
+    animation: Down 0.5s forwards;
 }
