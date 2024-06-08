@@ -6,7 +6,7 @@ function checkProfile() {
         document.getElementById("logp").style.display = "none"
         document.getElementById("profile").style.display = "block"
         document.getElementById("profile").textContent = localStorage.getItem("nameUser")
-        if (window.location.href == "https://mixa7498.github.io/Gymmy/index.html") {
+        if (window.location.href == "https://mixa7498.github.io/Gymmy/index.html" || (window.location.href == "https://mixa7498.github.io/Gymmy/") {
             document.getElementById("regbut").style.display = "none"
             document.getElementById("butabonement").style.display = "block"
         }
